@@ -4,6 +4,7 @@
     <groupId>com.jobtracker</groupId>
     <artifactId>jobtracker</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>   <!-- ADD THIS -->
     <name>jobtracker</name>
     <!-- ✅ Spring Boot Parent (VERY IMPORTANT) -->
     <parent> <groupId>org.springframework.boot</groupId>
