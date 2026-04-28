@@ -2,9 +2,15 @@ FROM eclipse-temurin:17-jdk
 
 WORKDIR /app
 
+# copy everything
 COPY . .
 
-RUN chmod +x mvnw
-RUN ./mvnw clean package -DskipTests -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true
+# move into correct folder
+WORKDIR /app/jobtracker
 
+# build project
+RUN chmod +x mvnw
+RUN ./mvnw clean package -DskipTests
+
+# run jar
 CMD ["sh", "-c", "java -jar target/*.jar"]
